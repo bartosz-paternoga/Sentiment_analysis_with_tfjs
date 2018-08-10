@@ -1,4 +1,4 @@
-Sentiment analysis on text with TensorFlow.js. Live demo at https://bartosz-paternoga.github.io/sentiment_tfjs/.
+Sentiment analysis on text with TensorFlow.js. Live demo at https://bartosz-paternoga.github.io/sentiment-tfjs/.
 
 More on the topic:
 
