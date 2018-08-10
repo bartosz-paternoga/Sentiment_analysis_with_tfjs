@@ -27,6 +27,12 @@
   to { transform: rotate(360deg); }
 }
 
+
+#review-text {
+  display: none;
+}
+
+
 #Div1 {
   justify-content: center;
   text-align: center;

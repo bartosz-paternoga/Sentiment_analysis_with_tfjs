@@ -30,9 +30,9 @@ const Comp = (props) => (
         </div>
 
 
-        <div>
-            <form>
-                <textarea id = 'review-text' name="input" cols="80" rows="10" onInput = {props.main}
+        <div >
+            <form  >
+                <textarea  id = 'review-text' name="input" cols="80" rows="10" onInput = {props.main}
                 placeholder="Type a positive or negative comment">
                 </textarea>
             </form>

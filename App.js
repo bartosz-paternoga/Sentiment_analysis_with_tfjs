@@ -14,9 +14,6 @@ class App extends Component {
 
   main0 = async () => {
 
-      const elem0 = document.getElementById('review-text');
-      elem0.style.display = 'none';
-
       const HOSTED_URLS = {
       model:
           'https://storage.googleapis.com/tfjs-models/tfjs/sentiment_cnn_v1/model.json',
@@ -45,8 +42,8 @@ class App extends Component {
           elem1.style.display = 'none';
           const elem2 = document.getElementById('sk-cube-grid');
           elem2.style.display = 'none';
-          const elem0 = document.getElementById('review-text');
-          elem0.style.display = 'inline';
+          const elem3 = document.getElementById('review-text');
+          elem3.style.display = 'inline';
                 }
 
   }
