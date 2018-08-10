@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Comp from './component1';
 import * as tf from '@tensorflow/tfjs';
 
 class App extends Component {
@@ -13,6 +13,9 @@ class App extends Component {
 
 
   main0 = async () => {
+
+      const elem0 = document.getElementById('review-text');
+      elem0.style.display = 'none';
 
       const HOSTED_URLS = {
       model:
@@ -34,6 +37,17 @@ class App extends Component {
       this.setState({metadataJson});  
       this.metadata = metadata;
       this.setState({metadata});  
+
+      const modelLoad = "LOADED";
+
+      if (modelLoad !=="") {
+          const elem1 = document.getElementById('loading-message');
+          elem1.style.display = 'none';
+          const elem2 = document.getElementById('sk-cube-grid');
+          elem2.style.display = 'none';
+          const elem0 = document.getElementById('review-text');
+          elem0.style.display = 'inline';
+                }
 
   }
 
@@ -80,22 +94,12 @@ class App extends Component {
 };
 
   render() {
-    return (
-      <div className="App" onLoad = {this.main0}>
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Sentiment Analysis with Tensorflow.js</h1>
-        </header><br/><br/>
+      return (
+             <Comp
+                 main0 = {this.main0}
+                 main = {this.main}               
+                 />    
 
-        <div>
-            <form>
-                <textarea id = 'review-text' name="input" cols="80" rows="10" onInput = {this.main}
-                placeholder="Type a positive or negative comment">
-                </textarea>
-            </form>
-        </div><br/>
-
-      </div>
     );
   }
 }
