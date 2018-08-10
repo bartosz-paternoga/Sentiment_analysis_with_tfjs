@@ -7,8 +7,8 @@ const Comp = (props) => (
  
       <div className="App" onLoad = {props.main0}>
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Sentiment Analysis with Tensorflow.js</h1>
+          <img id="logo" src={logo} className="App-logo" alt="logo" />
+          <h1 id="h1" className="App-title">Sentiment Analysis with Tensorflow.js</h1>
         </header><br/><br/>
 
 

@@ -76,16 +76,22 @@ class App extends Component {
       document.body.appendChild(div);
       div.style.marginBottom = '10px';
 
+      const h1 = document.getElementById("h1"); 
+      const logo = document.getElementById("logo"); 
+
       const infoText = document.createElement('span')
       infoText.innerText = (`Your positivity is at  ${(score*100).toFixed(0)}%`);
       div.appendChild(infoText);
 
        if (score*100 < 40) {
-        infoText.style.color = 'red';
+        infoText.style.color = 'darkred';
+        h1.style.color = 'red';
       } else if (60>score*100) {
-       infoText.style.color  = 'black';
+        infoText.style.color  = 'black';
+        h1.style.color = 'white';
       } else if ( score*100 >= 60) {
-        infoText.style.color = 'green';
+        infoText.style.color = 'darkgreen';
+        h1.style.color = 'lightgreen';
       }
 
 };
