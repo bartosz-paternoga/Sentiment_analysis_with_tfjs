@@ -5,7 +5,7 @@ import './App.css';
 const Comp = (props) => (
 
  
-      <div className="App" onLoad = {props.main0}>
+      <div className="App" >
         <header className="App-header">
           <img id="logo" src={logo} className="App-logo" alt="logo" />
           <h1 id="h1" className="App-title">Sentiment Analysis with Tensorflow.js</h1>
@@ -32,7 +32,7 @@ const Comp = (props) => (
 
         <div >
             <form  >
-                <textarea  id = 'review-text' name="input" cols="80" rows="10" onInput = {props.main}
+                <textarea  id = 'review-text' name="input" cols="80" rows="10" onInput = {props.textInput}
                 placeholder="Type a positive or negative comment">
                 </textarea>
             </form>
