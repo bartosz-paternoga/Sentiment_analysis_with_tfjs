@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
 import Comp from './component1';
-import showResult from './component2';
+import Prediction from './prediction';
+import Loader from './loader';
 import * as tf from '@tensorflow/tfjs';
-
 
 class App extends Component {
 
@@ -36,14 +36,7 @@ class App extends Component {
      
       const modelLoad = "LOADED";
 
-      if (modelLoad !=="") {
-          const elem1 = document.getElementById('loading-message');
-          elem1.style.display = 'none';
-          const elem2 = document.getElementById('sk-cube-grid');
-          elem2.style.display = 'none';
-          const elem3 = document.getElementById('review-text');
-          elem3.style.display = 'inline';
-                }
+      Loader(modelLoad);
 
   }
 
@@ -54,28 +47,10 @@ class App extends Component {
       const text =  reviewText.value;
       console.log("TEXT", text);
 
-      this.predicting(text);
-      
-      console.log("this.score", this.score)
+      const prediction = new Prediction(text);
+      prediction.predictThat(this.model , this.metadata);
 
-      showResult(this.score);
- 
   };
-
-
-  predicting = (text) => {
-
-        const trimmed = text.trim().toLowerCase().replace(/(\.|\,|\!)/g, '').split(' ');
-        const inputBuffer = tf.buffer([1, (this.metadata).max_len], "float32");
-        trimmed.forEach((word, i) => inputBuffer.set(this.metadata.word_index[word] + this.metadata.index_from, 0, i));
-        const input = inputBuffer.toTensor();
-        const predictOut = this.model.predict(input);
-        const score = predictOut.dataSync()[0];
-        predictOut.dispose();
-
-        console.log('Positivity: ' + (score*100).toFixed(0) +'%');
-        this.score = score;
-  }
 
 
 
